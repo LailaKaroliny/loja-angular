@@ -6,5 +6,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./atualiza-produto.component.css']
 })
 export class AtualizaProdutoComponent {
-
+  atualizar():void {
+    alert("Produto atualizado com sucesso!")
+  }
 }

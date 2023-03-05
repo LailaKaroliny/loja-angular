@@ -1,9 +1,9 @@
-export class Proudto{
+export class Produto{
     id: number = 0;
     produto: string = "";
     descricao: string = "";
     foto: string = "";
-    preco: number = "0";
+    preco: number = 0;
 
     constructor(id: number, produto: string, descricao: string, foto: string, preco: number){
         this.id = id;
