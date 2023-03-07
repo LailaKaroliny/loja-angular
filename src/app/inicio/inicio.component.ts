@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ProdutoService } from './produto.service';
+import { ProdutoService } from '../produto.service';
 import {Produto} from '../models/Produto.model';
 
 @Component({
@@ -21,7 +21,16 @@ constructor(private _produtoService:ProdutoService){}
 
     this._produtoService.getProdutos().subscribe(
       (retornaProduto: Produto[]) =>{
-        this.produtos = retornaProduto;
+        this.produtos = retornaProduto.map(
+          item => {
+            return new Produto(
+              item.id,
+              item.produto,
+              item.foto,
+              item.preco
+            );
+          }
+        )
       }
       )
     }
